@@ -1,0 +1,50 @@
+// Variables
+@text-color: #505050;
+@primary-color: #ebb952;
+@primary-color-invert: #fff;
+@page-background: #f5f5f5;
+@menu-background: rgba(0, 0, 0, 0.8);
+@big-font-size: 1.3rem;
+
+// Mixins
+.regular-font() {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.cool-font() {
+  font-family: 'Courgette', cursive;
+}
+
+.big-font() {
+  font-size: @big-font-size;
+  font-weight: 700;
+}
+
+.line-height-big() {
+  line-height: @big-font-size;
+}
+
+.page-background() {
+  background: url('../images/bg-pattern.png') repeat 0 0 @page-background !important;
+}
+
+.input-box() {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.button-default() {
+  background-color: #eeeeee;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 6px;
+  outline: none;
+  &.ng-click-active {
+    background-color: #dddddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+}
