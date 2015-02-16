@@ -1,0 +1,24 @@
+<div class="selection-screen">
+    <div class="selection-group">
+        <div class="button" ng-click="$state.go('start.main.dashboard')">
+            <span>
+                Looking for Roommates
+            </span>
+        </div>
+        <div class="button" ng-click="$state.go('start.main.dashboard')">
+            <span>
+                Looking for Rooms
+            </span>
+        </div>
+        <div class="button" ng-click="$state.go('start.main.dashboard')">
+            <span>
+                Looking for Apartments
+            </span>
+        </div>
+        <div class="optional" ng-click="defaultSelected=!defaultSelected">
+            <i class="selection-checkbox fa fa-check-circle-o fa-fw"
+               ng-class="{'fa-check-circle-o': defaultSelected,'fa-circle-o':!defaultSelected}"></i> Set as
+            default selection
+        </div>
+    </div>
+</div>

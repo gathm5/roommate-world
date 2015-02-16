@@ -37,46 +37,64 @@ angular
             $localForageProvider.setNotify(true, true); // itemSet, itemRemove
 
             $stateProvider
-                .state('main', {
+                .state('load', {
+                    url: '/load',
+                    views: {
+                        '@': {
+                            templateUrl: '/views/common/selection-screen.html',
+                            controller: 'SelectionScreenCtrl'
+                        }
+                    }
+                })
+                .state('start', {
+                    url: '/start',
+                    views: {
+                        '@': {
+                            templateUrl: '/views/common/load-screen.html'
+                        }
+                    }
+                })
+                .state('start.main', {
                     url: '/',
                     views: {
-                        'MainContent@': {
+                        'MainContent@start': {
                             templateUrl: '/views/common/main-content.html',
                             controller: 'MainContentCtrl'
                         },
-                        'MenuPanel@': {
+                        'MenuPanel@start': {
                             templateUrl: '/views/menu/menu-panel.html',
                             controller: 'MenuPanelCtrl'
                         },
-                        'Header@main': {
+                        'Header@start.main': {
                             templateUrl: '/views/common/header.html',
                             controller: 'HeaderCtrl'
                         }
                     }
                 })
-                .state('main.dashboard', {
+                .state('start.main.dashboard', {
                     url: 'dashboard',
                     views: {
-                        'Content@main': {
+                        'Content@start.main': {
                             templateUrl: '/views/dashboard/dashboard.html',
                             controller: 'DashboardCtrl'
                         },
-                        'SlideMenu@': {
+                        'SlideMenu@start': {
                             templateUrl: '/views/common/filter.html',
                             controller: 'FilterCtrl'
                         }
                     }
                 })
-                .state('main.settings', {
+                .state('start.main.settings', {
                     url: 'settings',
                     views: {
-                        'Content@main': {
+                        'Content@start.main': {
                             templateUrl: '/views/menu/settings.html',
                             controller: 'SettingsCtrl'
                         }
                     }
                 });
-            $urlRouterProvider.otherwise('/dashboard');
+            //$urlRouterProvider.otherwise('/start/dashboard');
+            $urlRouterProvider.otherwise('/load');
         }
     ])
     .run([

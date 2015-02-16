@@ -13,13 +13,18 @@ body, .container {
   .regular-font();
   .page-background();
   overflow: hidden;
+  height: 100%;
+  color: @text-color;
 }
 
 .click-blocker {
   display: none;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .active {

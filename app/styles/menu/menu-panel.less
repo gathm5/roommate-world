@@ -7,12 +7,13 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
   .menu-option {
     padding: 10px 5px;
-    border-bottom: 2px dashed rgba(0, 0, 0, 0.5);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
     font-weight: 300;
     text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
-
+    .cool-font();
+    .cool-font-min-size();
     &.ng-click-active {
-      background: rgba(0, 0, 0, 0.1);
+      color: @primary-color;
     }
 
     &:last-child {

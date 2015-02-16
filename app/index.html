@@ -5,11 +5,13 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/gs-angular-directives/gs-angular-directives.css" />
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,13 +25,7 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<drawer>
-    <div class="drawer-pull container" ui-view="MainContent" fast-click></div>
-    <div class="drawer-menu" ui-view="MenuPanel" fast-click></div>
-</drawer>
-<slide-out-menu top height="auto">
-    <div class="slide-up-menu" ui-view="SlideMenu" stop-event></div>
-</slide-out-menu>
+<div ui-view="" class="container"></div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -87,6 +83,7 @@
 <script src="scripts/controllers/menu/menu-panel.js"></script>
 <script src="scripts/controllers/menu/settings.js"></script>
 <script src="scripts/controllers/dashboard/dashboard.js"></script>
+<script src="scripts/controllers/common/selection-screen.js"></script>
 <!-- endbuild -->
 </body>
 </html>

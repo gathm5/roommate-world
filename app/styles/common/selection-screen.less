@@ -1,0 +1,39 @@
+.selection-screen {
+  height: 100%;
+  .color-background();
+
+  .selection-group {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 80%;
+    .button {
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin-top: 15px;
+      background: #fefefe;
+      border-radius: 3px;
+      .cool-font();
+      .cool-font-min-size();
+      &.ng-click-active {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        background: #f3f3f3;
+      }
+    }
+    .optional {
+      margin-top: 20px;
+      text-align: center;
+      line-height: 1.5em;
+      vertical-align: top;
+      color: @primary-color-invert;
+      .cool-font();
+      .selection-checkbox {
+        font-size: 1.5em;
+        min-width: 1.5em;
+      }
+    }
+  }
+}

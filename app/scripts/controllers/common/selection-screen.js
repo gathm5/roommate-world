@@ -2,15 +2,16 @@
 
 /**
  * @ngdoc function
- * @name roommateWorldApp.controller:DashboardCtrl
+ * @name roommateWorldApp.controller:SelectionScreenCtrl
  * @description
- * # DashboardCtrl
+ * # SelectionScreenCtrl
  * Controller of the roommateWorldApp
  */
 angular.module('roommateWorldApp')
-    .controller('DashboardCtrl', [
+    .controller('SelectionScreenCtrl', [
         '$scope',
         function ($scope) {
+            $scope.defaultSelected = true;
             $scope.$on('$$back', function () {
                 navigator.app && navigator.app.exitApp();
             });

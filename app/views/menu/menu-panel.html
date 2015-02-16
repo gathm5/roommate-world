@@ -1,1 +1,13 @@
-<p>This is the menu/menu-panel view.</p>
+<div class="menu-panel">
+    <ul>
+        <li class="menu-option" ng-click="$state.go('start.main.dashboard') && drawerParams.close()">
+            Dashboard
+        </li>
+        <li class="menu-option">
+            Settings
+        </li>
+        <li class="menu-option" ng-click="$state.go('load') && drawerParams.close()">
+            Change Selection
+        </li>
+    </ul>
+</div>
