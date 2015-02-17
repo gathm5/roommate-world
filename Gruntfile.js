@@ -138,7 +138,7 @@ module.exports = function (grunt) {
             },
             all: {
                 src: [
-                    'Gruntfile.js',
+                    //'Gruntfile.js',
                     '<%= yeoman.app %>/scripts/{,*/}*.js'
                 ]
             },
@@ -455,7 +455,7 @@ module.exports = function (grunt) {
         'concat',
         'ngAnnotate',
         'copy:dist',
-        'cdnify',
+        //'cdnify',
         'cssmin',
         'uglify',
         //'filerev',

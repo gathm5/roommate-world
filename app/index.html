@@ -6,15 +6,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Kotta+One|Niconne' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
+    <!-- build:css({.tmp,app}) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/gs-angular-directives/gs-angular-directives.css" />
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/roommate-world.css">
     <!-- endbuild -->
 </head>
@@ -52,7 +53,7 @@
 <![endif]-->
 <!-- endbuild -->
 
-<!-- build:js(.) scripts/vendor.js -->
+<!-- build:js({.tmp,app}) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <script src="bower_components/angular/angular.js"></script>
@@ -84,6 +85,10 @@
 <script src="scripts/controllers/menu/settings.js"></script>
 <script src="scripts/controllers/dashboard/dashboard.js"></script>
 <script src="scripts/controllers/common/selection-screen.js"></script>
+<script src="scripts/services/user-selection-data.js"></script>
 <!-- endbuild -->
+
+<!-- Cordova inclusion -->
+<script src="cordova.js"></script>
 </body>
 </html>

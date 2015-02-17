@@ -10,9 +10,13 @@
 angular.module('roommateWorldApp')
     .controller('DashboardCtrl', [
         '$scope',
-        function ($scope) {
-            $scope.$on('$$back', function () {
-                navigator.app && navigator.app.exitApp();
+        'userSelectionData',
+        function ($scope, userSelectionData) {
+            $scope.selection = userSelectionData.label();
+            $scope.$on('$device.backbutton', function (event) {
+                if (!event.defaultPrevented) {
+                    navigator.app && navigator.app.exitApp();
+                }
             });
         }
     ]);

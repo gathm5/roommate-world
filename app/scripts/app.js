@@ -113,7 +113,7 @@ angular
                 drawerParams.close();
                 slideOutMenuParams.close();
             });
-            $rootScope.$on('$$back', function (event) {
+            $rootScope.$on('$device.backbutton', function (event) {
                 if (drawerParams.isDrawerOpen || slideOutMenuParams.isSlideOpen) {
                     event.preventDefault();
                     event.defaultPrevented = true;
@@ -122,7 +122,7 @@ angular
                     $rootScope.$apply();
                 }
             });
-            $rootScope.$on('$$menu', function (event) {
+            $rootScope.$on('$device.menubutton', function (event) {
                 event.preventDefault();
                 event.defaultPrevented = true;
                 if (!slideOutMenuParams.isSlideOpen) {

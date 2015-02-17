@@ -6,13 +6,25 @@
 @menu-background: rgba(0, 0, 0, 0.5);
 @big-font-size: 1.3rem;
 
+@font-decent: 'Kotta One', Helvetica Neue, Helvetica, Arial, sans-serif;
+@font-cool: 'Economica', Helvetica Neue, Helvetica, Arial, sans-serif;
+@font-cooler: 'Niconne', Helvetica Neue, Helvetica, Arial, sans-serif;
+
 // Mixins
 .regular-font() {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+.decent-font() {
+  font-family: @font-decent;
+}
+
 .cool-font() {
-  font-family: 'Economica', sans-serif;
+  font-family: @font-cool;
+}
+
+.cooler-font() {
+  font-family: @font-cooler;
 }
 
 .cool-font-min-size() {
