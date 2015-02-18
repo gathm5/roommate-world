@@ -20,9 +20,9 @@
         <th>&nbsp;</th>
         </thead>
         <tbody>
-        <tr ng-repeat="(id, name) in roommateData">
-            <td> {{ name.name }}</td>
-            <td> {{ name.lookingFor }}</td>
+        <tr ng-repeat="roommate in roommateData">
+            <td> {{ roommate.name }}</td>
+            <td> {{ roommate.lookingFor }}</td>
             <td>
                 <a href="#/edit/{{ name.$id }}">Edit</a>
             </td>
