@@ -21,7 +21,16 @@ angular
         'ngAutocomplete',
         'ngTell',
         'LocalForageModule',
-        'angularMoment'
+        'angularMoment',
+        'firebase'
+    ])
+    .value('fbURL', 'https://torid-torch-8850.firebaseio.com')
+    .factory('RoommateObject', [
+        'fbURL',
+        '$firebase',
+        function (fbURL, $firebase) {
+            return $firebase(new Firebase(fbURL)).$asArray();
+        }
     ])
     .config([
         '$stateProvider',
