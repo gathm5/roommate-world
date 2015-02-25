@@ -1,16 +1,35 @@
 'use strict';
 
 angular.module('roommateWorldApp')
-  .factory('business/room', function () {
-    // Service logic
-    // ...
+    .factory('Room', [
+        'BackendData',
+        function (BackendData) {
+            // Public API here
 
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+            return function () {
+                this.get = function () {
+                    var getData = [];
+                    for (var key in BackendData) {
+                        if (BackendData[key].room) {
+                            getData.push(BackendData[key]);
+                        }
+                    }
+                    angular.extend(getData, BackendData);
+                    return BackendData;
+                };
+                this.add = function (data) {
+                    var postData = {
+                        room: {
+                            type: 'room',
+                            zipcode: data.zipcode,
+                            rent: data.rent
+                        }
+                    };
+                    return BackendData.$add(postData);
+                };
+                this.remove = function (id) {
+                    return BackendData.$remove(BackendData.$getRecord(id));
+                };
+            };
+        }
+    ]);

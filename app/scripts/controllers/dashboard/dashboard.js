@@ -10,32 +10,35 @@
 angular.module('roommateWorldApp')
     .controller('DashboardCtrl', [
         '$scope',
-        'RoommateObject',
-        '$firebase',
-        'fbURL',
+        'Room',
+        'Roommate',
+        'Apartment',
         'userSelectionData',
-        function ($scope, RoommateObject, $firebase, fbURL, userSelectionData) {
-
-            $scope.add = function () {
-                var save = RoommateObject.$add({
-                    name: $scope.name,
-                    lookingFor: $scope.lookingFor
-                });
-
-                $scope.name = '';
-                $scope.lookingFor = '';
-
-                if (save) {
-                    $scope.message = 'saved successfully';
-                } else {
-                    $scope.message = 'something went wrong';
-                }
-            };
-
-            $scope.roommateData = RoommateObject;
-
+        function ($scope, Room, Roommate, Apartment, userSelectionData) {
+            var object, selected;
+            selected = userSelectionData.label();
+            switch (selected) {
+                case 'Rooms':
+                    $scope.stayData = new Room();
+                    $scope.displayData = $scope.stayData.get();
+                    break;
+                case 'Roommates':
+                    $scope.stayData = new Roommate();
+                    $scope.displayData = $scope.stayData.get();
+                    break;
+                case 'Apartments':
+                    $scope.stayData = new Apartment();
+                    $scope.displayData = $scope.stayData.get();
+                    break;
+                default:
+                    $scope.stayData = (new Roommate());
+                    $scope.displayData = $scope.stayData.get();
+            }
+            selected = selected.substring(0, selected.length - 1);
+            selected = selected.toLowerCase();
+            $scope.selected = selected;
             $scope.remove = function (id) {
-                RoommateObject.$remove(id);
+                object.remove(id);
             };
 
             $scope.selection = userSelectionData.label();

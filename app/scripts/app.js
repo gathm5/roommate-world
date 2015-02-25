@@ -24,14 +24,12 @@ angular
         'angularMoment',
         'firebase'
     ])
-    .value('fbURL', 'https://torid-torch-8850.firebaseio.com')
-    .factory('RoommateObject', [
-        'fbURL',
-        '$firebase',
-        function (fbURL, $firebase) {
-            return $firebase(new Firebase(fbURL)).$asArray();
+    .constant('$config', {
+        backend: {
+            // Synced from "fire base" database
+            url: 'https://torid-torch-8850.firebaseio.com'
         }
-    ])
+    })
     .config([
         '$stateProvider',
         '$urlRouterProvider',
@@ -55,8 +53,16 @@ angular
                         }
                     }
                 })
+                .state('post', {
+                    url: '/post',
+                    views: {
+                        '@': {
+                            templateUrl: '/views/post/post.html',
+                            controller: 'PostCtrl'
+                        }
+                    }
+                })
                 .state('start', {
-                    url: '/start',
                     views: {
                         '@': {
                             templateUrl: '/views/common/load-screen.html'

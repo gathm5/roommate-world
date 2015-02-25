@@ -3,17 +3,17 @@
         Roommate World
     </div>
     <div class="selection-group">
-        <div class="button" ng-click="go('roommates')">
+        <div class="button-default" ng-click="go('roommates')">
             <span>
                 Looking for Roommates
             </span>
         </div>
-        <div class="button" ng-click="go('rooms')">
+        <div class="button-default" ng-click="go('rooms')">
             <span>
                 Looking for Rooms
             </span>
         </div>
-        <div class="button" ng-click="go('apartments')">
+        <div class="button-default" ng-click="go('apartments')">
             <span>
                 Looking for Apartments
             </span>
@@ -22,6 +22,12 @@
             <i class="selection-checkbox fa fa-check-circle-o fa-fw"
                ng-class="{'fa-check-circle-o': defaultSelected,'fa-circle-o':!defaultSelected}"></i> Set as
             default selection
+        </div>
+        <div class="split-line"></div>
+        <div class="button-default" ng-click="$state.go('post')">
+            <span>
+                Post an Ad
+            </span>
         </div>
     </div>
 </div>

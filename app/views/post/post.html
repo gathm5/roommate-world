@@ -1,0 +1,36 @@
+<div class="post">
+
+    <div class="post-block">
+        <label>zipcode</label>
+        <input class="block form-input" ng-model="postData.zipcode" type="number">
+    </div>
+    <div class="post-block">
+        <label>Posting for</label>
+
+        <div class="option-box">
+        <span class="option" ng-class="{'selected': selected === option}" ng-click="select(option)"
+              ng-repeat="option in options">
+            {{option}}
+        </span>
+        </div>
+    </div>
+    <div class="post-block">
+        <div ng-switch="selected">
+            <div ng-switch-when="rooms">
+                <label>Looking for rent around</label>
+            </div>
+            <div ng-switch-when="roommates">
+                <label>Rent the room for</label>
+            </div>
+            <div ng-switch-when="apartments">
+                <label>Rent</label>
+            </div>
+            <input class="form-input block" ng-model="postData.rent" type="number"/>
+        </div>
+    </div>
+    <div class="post-block">
+        <div ng-click="post()" class="button-default block">
+            Post
+        </div>
+    </div>
+</div>

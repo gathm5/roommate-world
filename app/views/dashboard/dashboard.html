@@ -1,38 +1,13 @@
 <div class="dashboard">
-    <div class="dashboard-form-element">
-        <label>Name:</label>
-        <input type="text" ng-model="name" class="form-input">
-    </div>
-    <div class="dashboard-form-element">
-        <label>Looking For:</label>
-        <input type="text" ng-model="lookingFor" class="form-input">
-    </div>
-    <div class="dashboard-form-element">
-        <button type="button" ng-click="add()" class="form-button">
-            Save
-        </button>
-    </div>
     <table class="table">
-        <thead>
-        <th>Name</th>
-        <th>Looking for</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        </thead>
-        <tbody>
         <tr ng-repeat="roommate in roommateData">
-            <td> {{ roommate.name }}</td>
-            <td> {{ roommate.lookingFor }}</td>
-            <td>
-                <a href="#/edit/{{ name.$id }}">Edit</a>
-            </td>
-            <td>
-                <a href="#" ng-click="remove(id)">Remove</a>
-            </td>
+            <td>{{roommate}} - {{$id}}</td>
+            <td ng-click="remove('{{roommate.$id}}')">Remove</td>
         </tr>
-        </tbody>
     </table>
-    <div>
-        {{message}}
-    </div>
+    <ul>
+        <li class="rental-list" ng-repeat="stay in filtered = (displayData | listFilter:selected)">
+            {{stay[selected]}}
+        </li>
+    </ul>
 </div>
