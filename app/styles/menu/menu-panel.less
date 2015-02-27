@@ -1,23 +1,22 @@
 .menu-panel {
-  height: 100%;
-  width: 100%;
-  background: @menu-background;
-  color: @primary-color-invert;
-  padding: 10px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
-  .menu-option {
-    padding: 10px 5px;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
-    font-weight: 300;
-    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
-    .cool-font();
-    .cool-font-min-size();
-    &.ng-click-active {
-      color: @primary-color;
+    height: 100%;
+    width: 100%;
+    background: @menu-background;
+    color: @primary-color-invert;
+    padding: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+    .menu-option {
+        padding: 10px 5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-weight: 300;
+        text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+        .cool-font();
+        .cool-font-min-size();
+        &.ng-click-active {
+            color: @primary-color;
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
     }
-
-    &:last-child {
-      border-bottom: 0;
-    }
-  }
 }

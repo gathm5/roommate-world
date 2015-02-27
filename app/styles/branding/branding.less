@@ -10,76 +10,83 @@
 @font-cool: 'Economica', Helvetica Neue, Helvetica, Arial, sans-serif;
 @font-cooler: 'Niconne', Helvetica Neue, Helvetica, Arial, sans-serif;
 
+@success-color: #006000;
+@failure-color: #d30000;
+
 // Mixins
 .regular-font() {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .decent-font() {
-  font-family: @font-decent;
+    font-family: @font-decent;
 }
 
 .cool-font() {
-  font-family: @font-cool;
+    font-family: @font-cool;
 }
 
 .cooler-font() {
-  font-family: @font-cooler;
+    font-family: @font-cooler;
 }
 
 .cool-font-min-size() {
-  font-size: 1.3rem;
+    font-size: 1.3rem;
 }
 
 .big-font() {
-  font-size: @big-font-size;
-  font-weight: 700;
+    font-size: @big-font-size;
+    font-weight: 700;
 }
 
 .line-height-big() {
-  line-height: @big-font-size;
+    line-height: @big-font-size;
 }
 
 .page-background() {
-  background: none repeat 0 0 @page-background !important;
+    background: none repeat 0 0 @page-background !important;
 }
 
 .color-background() {
-  background: rgba(255, 175, 75, 1);
-  background: -moz-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 175, 75, 1)), color-stop(40%, rgba(255, 175, 75, 1)), color-stop(100%, rgba(255, 146, 10, 1)));
-  background: -webkit-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
-  background: -o-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
-  background: -ms-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
-  background: linear-gradient(to bottom, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=0);
+    background: rgba(255, 175, 75, 1);
+    background: -moz-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 175, 75, 1)), color-stop(40%, rgba(255, 175, 75, 1)), color-stop(100%, rgba(255, 146, 10, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
+    background: -o-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 175, 75, 1) 0%, rgba(255, 175, 75, 1) 40%, rgba(255, 146, 10, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=0);
 }
 
 .input-box() {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
 }
 
 .button-default() {
-  background-color: #eeeeee;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  text-align: center;
-  padding: 12px 6px;
-  outline: none;
-  &.ng-click-active {
-    background-color: #dddddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  }
+    background-color: #eeeeee;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px 6px;
+    outline: none;
+    &.ng-click-active {
+        background-color: #dddddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
 }
 
 .clear-fix() {
-  &:after {
-    clear: both;
-    display: table;
-    content: ' ';
-  }
+    &:after {
+        clear: both;
+        display: table;
+        content: ' ';
+    }
+}
+
+.nice-padding() {
+    padding: 10px;
 }

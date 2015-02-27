@@ -22,7 +22,8 @@ angular.module('roommateWorldApp')
                         apartment: {
                             type: 'apartment',
                             zipcode: data.zipcode,
-                            rent: data.rent
+                            rent: data.rent,
+                            description: data.description
                         }
                     };
                     return BackendData.$add(postData);

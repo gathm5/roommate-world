@@ -1,13 +1,10 @@
 <div class="dashboard">
-    <table class="table">
-        <tr ng-repeat="roommate in roommateData">
-            <td>{{roommate}} - {{$id}}</td>
-            <td ng-click="remove('{{roommate.$id}}')">Remove</td>
-        </tr>
-    </table>
+    <div class="filter-button" ng-click="slideOutMenuParams.open()">
+        Filter
+    </div>
     <ul>
-        <li class="rental-list" ng-repeat="stay in filtered = (displayData | listFilter:selected)">
-            {{stay[selected]}}
+        <li class="rental-list" ng-click="true" ng-repeat="stay in filtered = (displayData | listFilter:selected)">
+            <rental-display display="stay[selected]"></rental-display>
         </li>
     </ul>
 </div>

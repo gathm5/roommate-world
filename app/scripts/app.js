@@ -53,15 +53,6 @@ angular
                         }
                     }
                 })
-                .state('post', {
-                    url: '/post',
-                    views: {
-                        '@': {
-                            templateUrl: '/views/post/post.html',
-                            controller: 'PostCtrl'
-                        }
-                    }
-                })
                 .state('start', {
                     views: {
                         '@': {
@@ -70,7 +61,6 @@ angular
                     }
                 })
                 .state('start.main', {
-                    url: '/',
                     views: {
                         'MainContent@start': {
                             templateUrl: '/views/common/main-content.html',
@@ -87,7 +77,7 @@ angular
                     }
                 })
                 .state('start.main.dashboard', {
-                    url: 'dashboard',
+                    url: '/dashboard',
                     views: {
                         'Content@start.main': {
                             templateUrl: '/views/dashboard/dashboard.html',
@@ -99,8 +89,17 @@ angular
                         }
                     }
                 })
+                .state('start.main.post', {
+                    url: '/post',
+                    views: {
+                        'Content@start.main': {
+                            templateUrl: '/views/post/post.html',
+                            controller: 'PostCtrl'
+                        }
+                    }
+                })
                 .state('start.main.settings', {
-                    url: 'settings',
+                    url: '/settings',
                     views: {
                         'Content@start.main': {
                             templateUrl: '/views/menu/settings.html',
@@ -118,11 +117,13 @@ angular
         'drawerParams',
         'slideOutMenuParams',
         'gsDeviceListeners',
+        'Dictionary',
         '$rootScope',
-        function ($state, $stateParams, drawerParams, slideOutMenuParams, gsDeviceListeners, $rootScope) {
+        function ($state, $stateParams, drawerParams, slideOutMenuParams, gsDeviceListeners, dictionary, $rootScope) {
             $rootScope.$state = $state;
             $rootScope.drawerParams = drawerParams;
             $rootScope.slideOutMenuParams = slideOutMenuParams;
+            $rootScope.dictionary = dictionary();
             gsDeviceListeners.init();
             $rootScope.$on('$stateChangeStart', function () {
                 drawerParams.close();

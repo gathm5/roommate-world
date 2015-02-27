@@ -2,7 +2,7 @@
 
     <div class="post-block">
         <label>zipcode</label>
-        <input class="block form-input" ng-model="postData.zipcode" type="number">
+        <input class="block form-input" placeholder="12345" ng-model="postData.zipcode" type="number">
     </div>
     <div class="post-block">
         <label>Posting for</label>
@@ -14,23 +14,24 @@
         </span>
         </div>
     </div>
-    <div class="post-block">
-        <div ng-switch="selected">
-            <div ng-switch-when="rooms">
-                <label>Looking for rent around</label>
-            </div>
-            <div ng-switch-when="roommates">
-                <label>Rent the room for</label>
-            </div>
-            <div ng-switch-when="apartments">
-                <label>Rent</label>
-            </div>
-            <input class="form-input block" ng-model="postData.rent" type="number"/>
-        </div>
+    <div class="post-block" ng-switch="selected">
+        <label ng-switch-when="rooms">{{dictionary.post.room.label}}</label>
+        <label ng-switch-when="roommates">{{dictionary.post.roommate.label}}</label>
+        <label ng-switch-when="apartments">{{dictionary.post.apartment.label}}</label>
+        <input class="form-input block" placeholder="rental amount $0.00" ng-model="postData.rent" type="number"/>
     </div>
     <div class="post-block">
+        <label>Short description</label>
+        <input class="block form-input" placeholder="Describe in few words" maxlength="100"
+               ng-model="postData.description" type="text">
+    </div>
+    <div ng-if="apiCallBack.showButton" class="post-block">
         <div ng-click="post()" class="button-default block">
             Post
         </div>
+    </div>
+    <div ng-if="apiCallBack.message" class="message"
+         ng-class="{'success':apiCallBack.success,'fail':!apiCallBack.success}">
+        {{apiCallBack.message}}
     </div>
 </div>

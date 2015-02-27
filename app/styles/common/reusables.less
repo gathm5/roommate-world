@@ -1,0 +1,50 @@
+.button-default {
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    background: #fefefe;
+    border-radius: 3px;
+    .cool-font();
+    .cool-font-min-size();
+    &.ng-click-active {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        background: #f3f3f3;
+        color: @primary-color;
+    }
+}
+
+.block {
+    display: block;
+    width: 100%;
+}
+
+.inline {
+    display: inline-block;
+    width: auto;
+}
+
+.message {
+    font-size: 0.8em;
+    &.success {
+        color: @success-color;
+    }
+    &.fail {
+        color: @failure-color;
+    }
+}
+
+.decentList {
+    .decentItem {
+        .nice-padding();
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        &:first-child {
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+        &.ng-click-active {
+            color: @primary-color;
+        }
+    }
+}

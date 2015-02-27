@@ -14,7 +14,6 @@ angular.module('roommateWorldApp')
                             getData.push(BackendData[key]);
                         }
                     }
-                    angular.extend(getData, BackendData);
                     return BackendData;
                 };
                 this.add = function (data) {
@@ -22,7 +21,8 @@ angular.module('roommateWorldApp')
                         room: {
                             type: 'room',
                             zipcode: data.zipcode,
-                            rent: data.rent
+                            rent: data.rent,
+                            description: data.description
                         }
                     };
                     return BackendData.$add(postData);

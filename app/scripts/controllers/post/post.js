@@ -21,7 +21,8 @@ angular.module('roommateWorldApp')
             $scope.postData = {
                 zipcode: null,
                 type: null,
-                rent: null
+                rent: null,
+                description: null
             };
             $scope.select = function (option) {
                 $scope.selected = option;
@@ -40,10 +41,33 @@ angular.module('roommateWorldApp')
                         break;
                 }
                 $scope.postData.type = $scope.selected;
-                if ($scope.postData.zipcode && $scope.postData.type && $scope.postData.rent) {
-                    object.add($scope.postData);
-                    $state.go('load');
+                if ($scope.postData.zipcode && $scope.postData.type && $scope.postData.rent && $scope.postData.description) {
+                    if (object.add($scope.postData)) {
+                        $scope.apiCallBack = {
+                            success: true,
+                            message: $scope.dictionary.post.success,
+                            showButton: false
+                        };
+                        $state.go('load');
+                    }
+                    else {
+                        $scope.apiCallBack = {
+                            success: false,
+                            message: $scope.dictionary.post.failure,
+                            showButton: true
+                        };
+                    }
                 }
+                else {
+                    $scope.apiCallBack = {
+                        success: false,
+                        message: $scope.dictionary.post.empty,
+                        showButton: true
+                    };
+                }
+            };
+            $scope.apiCallBack = {
+                showButton: true
             };
             $scope.$on('$device.backbutton', function (event) {
                 if (!event.defaultPrevented) {

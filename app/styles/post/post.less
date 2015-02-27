@@ -1,40 +1,38 @@
 .post {
-  padding: 20px;
-  height: 100%;
-  .color-background();
-  .post-block {
-    margin-bottom: 10px;
+    height: 100%;
+    .nice-padding();
+    .post-block {
+        margin-bottom: 10px;
 
-    label {
-      color: @primary-color-invert;
-      display: block;
-      margin-bottom: 10px;
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .option-box {
+            .option {
+                display: inline-block;
+                width: 33%;
+                float: left;
+                text-align: center;
+                padding: 10px;
+                background: @primary-color-invert;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+                .cool-font();
+                &:first-child {
+                    border-radius: 10px 0 0 10px;
+                }
+                &:last-child {
+                    border-radius: 0 10px 10px 0;
+                }
+                &.ng-click-active {
+                    color: @primary-color;
+                }
+                &.selected {
+                    background: @primary-color;
+                    color: @primary-color-invert;
+                }
+            }
+            .clear-fix();
+        }
     }
-    .option-box {
-      .option {
-        display: inline-block;
-        width: 33%;
-        float: left;
-        text-align: center;
-        padding: 10px;
-        background: @primary-color-invert;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-        .cool-font();
-        &:first-child {
-          border-radius: 10px 0 0 10px;
-        }
-        &:last-child {
-          border-radius: 0 10px 10px 0;
-        }
-        &.ng-click-active {
-          color: @primary-color;
-        }
-        &.selected {
-          background: @primary-color;
-          color: @primary-color-invert;
-        }
-      }
-      .clear-fix();
-    }
-  }
 }
