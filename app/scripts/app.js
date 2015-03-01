@@ -22,7 +22,8 @@ angular
         'ngTell',
         'LocalForageModule',
         'angularMoment',
-        'firebase'
+        'firebase',
+        'ui.keypress'
     ])
     .constant('$config', {
         backend: {

@@ -28,7 +28,10 @@ angular.module('roommateWorldApp')
                 $scope.selected = option;
                 $scope.postData.type = option;
             };
-            $scope.post = function () {
+            $scope.post = function (e) {
+                if (e) {
+                    e.target.blur();
+                }
                 switch ($scope.selected) {
                     case 'rooms':
                         object = new Room();

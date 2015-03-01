@@ -3,13 +3,13 @@
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-top: 15px;
-    background: #fefefe;
+    background: #dddddd;
     border-radius: 3px;
     .cool-font();
     .cool-font-min-size();
     &.ng-click-active {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-        background: #f3f3f3;
+        background: #e4e4e4;
         color: @primary-color;
     }
 }
@@ -46,5 +46,12 @@
         &.ng-click-active {
             color: @primary-color;
         }
+    }
+}
+
+.link {
+    text-decoration: underline;
+    .ng-click-active {
+        color: @primary-color;
     }
 }

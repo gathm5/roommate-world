@@ -1,4 +1,8 @@
-<div class="filter">
+<div class="filter" ui-keypress="{'enter': 'doFilter($event) && slideOutMenuParams.close()'}">
     <label class="inline">Search zipcode</label>
-    <input type="number" class="form-input block" ng-model="filter.zip" placeholder="eg: 12345, etc"/>
+    <input type="number" class="form-input block" ng-model="filter" placeholder="eg: 12345, etc"/>
+
+    <div class="form-input block" ng-click="doFilter() && slideOutMenuParams.close()">
+        Filter
+    </div>
 </div>

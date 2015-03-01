@@ -14,9 +14,11 @@ angular.module('roommateWorldApp')
         'Roommate',
         'Apartment',
         'userSelectionData',
-        function ($scope, Room, Roommate, Apartment, userSelectionData) {
+        'dashboardService',
+        function ($scope, Room, Roommate, Apartment, userSelectionData, dashboardService) {
             var object, selected;
             selected = userSelectionData.label();
+            $scope.filterData = dashboardService.getFilter();
             switch (selected) {
                 case 'Rooms':
                     $scope.stayData = new Room();
@@ -40,8 +42,13 @@ angular.module('roommateWorldApp')
             $scope.remove = function (id) {
                 object.remove(id);
             };
-
+            $scope.clearFilter = function () {
+                dashboardService.setFilter();
+            };
             $scope.selection = userSelectionData.label();
+            $scope.$on('Filter', function () {
+                $scope.filterData = dashboardService.getFilter();
+            });
             $scope.$on('$device.backbutton', function (event) {
                 if (!event.defaultPrevented) {
                     navigator.app && navigator.app.exitApp();

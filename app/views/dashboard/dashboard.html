@@ -1,9 +1,15 @@
-<div class="dashboard">
-    <div class="filter-button" ng-click="slideOutMenuParams.open()">
-        Filter
+<div class="dashboard" ng-tell="dashboard">
+    <div class="filter-button">
+        <span ng-if="!filterData" ng-click="slideOutMenuParams.open()">Filter</span>
+        <span ng-if="filterData">
+            ({{filterData}})
+            <span class="link" ng-click="slideOutMenuParams.open()">Modify</span>
+            <span class="link" ng-click="clearFilter()">Clear</span>
+        </span>
     </div>
     <ul>
-        <li class="rental-list" ng-click="true" ng-repeat="stay in filtered = (displayData | listFilter:selected)">
+        <li class="rental-list" ng-click="true"
+            ng-repeat="stay in (filtered = (displayData | listFilter:selected)) | filter:filterData">
             <rental-display display="stay[selected]"></rental-display>
         </li>
     </ul>

@@ -55,8 +55,8 @@ angular.module('roommateWorldApp')
                 var random = 'j' + (Math.random() * 100);
                 mockData[random] = data;
             };
-            //var newMock = new Mock();
-            //return (newMock);
-            return $firebase(new Firebase($config.backend.url)).$asArray();
+            var newMock = new Mock();
+            return (newMock);
+            //return $firebase(new Firebase($config.backend.url)).$asArray();
         }
     ]);

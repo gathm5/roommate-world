@@ -1,41 +1,36 @@
 .selection-screen {
-  height: 100%;
-  .color-background();
-
-  .app-label {
-    .cooler-font();
-    text-align: center;
-    font-size: 2.5em;
-    color: rgba(255, 255, 255, 0.5);
-    position: fixed;
-    top: 5%;
-    width: 100%;
-  }
-  .selection-group {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 80%;
-    .optional {
-      margin-top: 20px;
-      text-align: center;
-      line-height: 1.5em;
-      vertical-align: top;
-      color: @primary-color-invert;
-      .cool-font();
-      .selection-checkbox {
-        font-size: 1.5em;
-        min-width: 1.5em;
-      }
+    height: 100%;
+    overflow-y: auto;
+    .color-background();
+    .app-label {
+        .cooler-font();
+        text-align: center;
+        font-size: 2.5em;
+        color: rgba(255, 255, 255, 0.5);
+        padding-top: 5%;
+        width: 100%;
     }
-  }
-  .split-line {
-    width: 100%;
-    height: 1px;
-    border: 1px dashed @primary-color-invert;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-  }
+    .selection-group {
+        width: 80%;
+        margin: 0 auto;
+        .optional {
+            margin-top: 20px;
+            text-align: center;
+            line-height: 1.5em;
+            vertical-align: top;
+            color: @primary-color-invert;
+            .cool-font();
+            .selection-checkbox {
+                font-size: 1.5em;
+                min-width: 1.5em;
+            }
+        }
+    }
+    .split-line {
+        width: 100%;
+        height: 1px;
+        border: 1px dashed rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+    }
 }
