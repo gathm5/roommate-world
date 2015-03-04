@@ -1,8 +1,15 @@
 <div class="rental-display">
-    <div class="rental-description">
-        {{rentalItem.description}} - {{rentalItem.zipcode}}
+    <div class="line-first">
+        <div class="rental-description">
+            {{rentalItem.description}}
+        </div>
+        <div class="rental-price">
+            {{rentalItem.rent | currency}}
+        </div>
     </div>
-    <span class="rent">
-        {{rentalItem.rent | currency}}
-    </span>
+    <div class="line-second">
+        <div class="rental-zip">
+            in <span class="zip-code">{{rentalItem.zipcode}}</span>
+        </div>
+    </div>
 </div>

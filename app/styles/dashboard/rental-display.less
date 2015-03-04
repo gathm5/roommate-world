@@ -1,11 +1,27 @@
 .rental-display {
     .rental-description {
-        font-style: italic;
-    }
-    .rent {
         .inline;
+        font-style: italic;
+        text-align: left;
+        width: 80%;
+        width: ~"-webkit-calc(100% - 80px)";
+        width: ~"calc(100% - 80px)";
+    }
+    .rental-price {
+        .inline;
+        text-align: right;
         font-size: 0.8em;
         color: @failure-color;
         margin-top: 5px;
+        width: 70px;
+        vertical-align: top;
+    }
+    .rental-zip {
+        margin-top: 10px;
+        font-size: 0.7em;
+        .zip-code {
+            font-style: italic;
+            color: @success-color;
+        }
     }
 }

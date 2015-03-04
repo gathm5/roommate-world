@@ -29,6 +29,9 @@ angular
         backend: {
             // Synced from "fire base" database
             url: 'https://torid-torch-8850.firebaseio.com'
+        },
+        fileServer: {
+            url: 'http://yippip.com/uploader.html'
         }
     })
     .config([

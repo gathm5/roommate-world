@@ -25,6 +25,9 @@
         <input class="block form-input" placeholder="Describe in few words" maxlength="100"
                ng-model="postData.description" type="text">
     </div>
+    <div class="post-block">
+        <upload-file></upload-file>
+    </div>
     <div ng-if="apiCallBack.showButton" class="post-block">
         <div ng-click="post()" class="button-default block">
             Post
